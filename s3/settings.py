@@ -26,7 +26,7 @@ SECRET_KEY = 'bpt52vf_$-l08+otxfn2+k&f!tzm+oy7lxm+umx9r*xizchaip'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://s3-teste.herokuapp.com/']
 
 
 # Application definition
@@ -126,3 +126,10 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 
 django_heroku.settings(locals())
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACESS_KEY_ID = 'AKIAQXQNTK3SF3F7WOKA'
+AWS_SECRET_ACESS_KEY= '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'
+AWS_STORAGE_BUCKET_NAME= 'video-cads'
+AWS_S3_FILE_OVERWRITE= False
+AWS_DEFAULT_ACL= None
